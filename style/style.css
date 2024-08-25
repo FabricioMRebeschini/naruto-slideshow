@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F2CB57;
+    background-image: url('../img/sasuke-uchiha-and-naruto-bg.jpg');
+    background-position: 80% 18%;
+    /* background-color: #F26B1D; */
+
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.logo img{
+    max-width: 120px;
+    height: auto;
+}
+
+
+.slide-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.685);
+}
+
+.container-items{
+    display: flex;
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+
+.item{
+    width: 50vw;
+    height: 50vh;
+    transition: all 2s;
+}
+
+.item:first-child{
+    margin-left: -100%;
+}
+
+.item img{
+    width: 50vw;
+    height: 50vh;
+    border-radius: 10px;
+    background-size: contain;
+}
+
+
+.action-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 30px sans-serif;
+    color: #00000000;
+    z-index: 1;
+    width: 50px;
+    height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    border-radius: 10px;
+}
+
+.action-button:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.438);
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    
+}
+
+.botao-play,.botao-pause{
+    font-size: 50px;
+    margin: 0 25px;
+    cursor: pointer;
+}
+.botao-play:hover{
+    color: rgb(65, 63, 63);
+}
+
+.botao-pause{
+    display: none;
+    cursor: pointer;
+}
+.botao-pause:hover{
+    color: rgb(65, 63, 63);
+}
+
+footer{
+    color: #050303;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9rem;
+    text-shadow: 1px 0px 5px rgb(246, 243, 243);
+}
+
+
+/* @media screen and (max-width:888px){
+    .slide-container{
+        width: 60vw;
+        height: 70vh;
+        margin: 80px auto;
+    }
+
+
+    .container-items{
+        width: 60vw;
+        height: 70vh;
+    }
+
+    .item{
+        width: 60vw;
+        height: 70vh;
+    }
+
+    .item img{
+        width: 60vw;
+        height: 70vh;
+    }
+
+    .player{
+        margin-top: -60px;
+    }
+
+    footer{
+        margin-top: 10px;
+    }
+} */
+
+
+@media screen and (max-width:1000px){
+    .slide-container{
+        width: 80vw;
+        height: 60vh;
+    }
+
+
+    .container-items{
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .item{
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .item img{
+        width: 80vw;
+        height: 60vh;
+    }
+
+
+    .player{
+        margin-top: -40px;
+    }
+
+    footer{
+        margin-top: -10px;
+    }
+}
+
+
+
+@media screen and (max-width:402px){
+    .slide-container{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+
+    .container-items{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .item{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .item img{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width:299px){
+    .slide-container{
+        max-width: 320px;
+        height:250px;
+    }
+
+
+    .container-items{
+        max-width: 320px;
+        height:250px;
+    }
+
+    .item{
+        max-width: 320px;
+        height:250px;
+    }
+
+    .item img{
+        max-width: 320px;
+        height:250px;
+    }
+
+
+    .logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
+
+
+
+
+
