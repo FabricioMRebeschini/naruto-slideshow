@@ -145,4 +145,27 @@ audio.addEventListener('ended', () => {
 document.querySelector('#previous').addEventListener('click',previous)
 document.querySelector('#next').addEventListener('click',next)
 
+let startX;
 
+containerItems.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+containerItems.addEventListener('touchmove', (e) => {
+    if (!startX) return;
+
+    let moveX = e.touches[0].clientX;
+    let diffX = startX - moveX;
+
+    if (diffX < -50) {
+        next();
+        startX = null;
+    } else if (diffX > 50) {
+        previous();
+        startX = null;
+    }
+});
+
+containerItems.addEventListener('touchend', () => {
+    startX = null;
+});
