@@ -103,12 +103,22 @@ let items = document.querySelectorAll('.item')
 const previous = () => {
     containerItems.appendChild(items[0]);
     items = document.querySelectorAll('.item')
+    containerItems.style.boxShadow = '1px 10px 10px rgba(251, 0, 0, 0.5)'
+    setTimeout(()=>{
+        
+        containerItems.style.boxShadow = 'none'
+    },1000)
 }
 
 const next = () => {
     const lastItem = items[items.length - 1]
     containerItems.insertBefore( lastItem, items[0]);
     items = document.querySelectorAll('.item')
+    containerItems.style.boxShadow = '1px 10px 10px rgba(251, 0, 0, 0.5)'
+    setTimeout(()=>{
+        
+        containerItems.style.boxShadow = 'none'
+    },1000)
 }
 
 
@@ -124,6 +134,10 @@ botaoPlay.addEventListener('click', () => {
     audio.play();
     botaoPlay.style.display = 'none';
     botaoPause.style.display = 'block';
+    setTimeout(()=>{
+        mudarBanner()
+    },120000)
+    
 });
 
 botaoPause.addEventListener('click', () => {
@@ -138,6 +152,14 @@ audio.addEventListener('ended', () => {
     audio.load();
     audio.play();
 });
+
+
+function mudarBanner(){
+    document.querySelector('body').style.backgroundImage = "url('https://wallpapercave.com/wp/q4kgoWz.jpg')"
+    
+    document.querySelector('body').style.backgroundRepeat = 'no-repeat'
+    document.querySelector('body').style.backgroundSize = 'cover'
+}
 
 
 
