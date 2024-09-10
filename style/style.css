@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body{
+    height: 100vh;
     background-color: #F2CB57;
     background-image: url('../img/sasuke-uchiha-and-naruto-bg.jpg');
     background-position: 80% 18%;
@@ -22,6 +23,16 @@ body{
     max-width: 120px;
     height: auto;
 }
+
+/* .menu{
+    display: flex;
+    justify-content: center;
+}
+
+.menu span{
+    font-size: 50px;
+    color: #F2CB57;
+} */
 
 
 .slide-container{
@@ -112,12 +123,12 @@ body{
 }
 
 footer{
-    color: #050303;
+    color: #fcf6f6;
     width: 100%;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: .9rem;
-    text-shadow: 1px 0px 5px rgb(246, 243, 243);
+    text-shadow: 1px 0px 2px rgba(246, 243, 243, 0.589);
 }
 
 
@@ -189,10 +200,15 @@ footer{
 
 
 @media screen and (max-width:402px){
+    body{
+        background-image: none;
+    }
+
     .slide-container{
         max-width: 300px;
         max-height: 300px;
     }
+
 
 
     .container-items{
@@ -215,26 +231,30 @@ footer{
 
 
 
-@media screen and (max-width:299px){
+@media screen and (max-width:350px){
+    body{
+        background-image: none;
+    }
+
     .slide-container{
-        max-width: 320px;
-        height:250px;
+        width: 95vw;
+        height:350px;
     }
 
 
     .container-items{
-        max-width: 320px;
-        height:250px;
+        width: 95vw;
+        height:350px;
     }
 
     .item{
-        max-width: 320px;
-        height:250px;
+        width: 95vw;
+        height:350px;
     }
 
     .item img{
-        max-width: 320px;
-        height:250px;
+        width: 95vw;
+        height:350px;
     }
 
 
@@ -243,6 +263,20 @@ footer{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    body{
+        
+        background-image: none;
+        /* background-color: #F26B1D; */
+    
+    }
+    .player{
+        margin-top: -30px;
+    }
+
+    footer{
+        margin-top: 40px;
     }
 
 }

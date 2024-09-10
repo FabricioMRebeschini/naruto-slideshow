@@ -127,15 +127,17 @@ const audio = document.querySelector('audio');
 const source = document.querySelector('audio source');
 const botaoPause = document.querySelector('.botao-pause');
 
-var playlist = ['sound/Naruto Piano Medley.mp3', 'sound/Naruto - Sadness and Sorrow.mp3']; 
+var playlist = ['sound/Naruto - Sadness and Sorrow.mp3','sound/Naruto Piano Medley.mp3']; 
 var currentTrack = 0;
 
+let isPlay = false;
 botaoPlay.addEventListener('click', () => {
     audio.play();
     botaoPlay.style.display = 'none';
     botaoPause.style.display = 'block';
     setTimeout(()=>{
         mudarBanner()
+        isPlay = true
     },120000)
     
 });
@@ -148,18 +150,34 @@ botaoPause.addEventListener('click', () => {
 
 audio.addEventListener('ended', () => {
     currentTrack = (currentTrack + 1) % playlist.length;
+    console.log('Faixa atual:', currentTrack);
     source.src = playlist[currentTrack];
     audio.load();
     audio.play();
 });
 
-
-function mudarBanner(){
-    document.querySelector('body').style.backgroundImage = "url('https://wallpapercave.com/wp/q4kgoWz.jpg')"
-    
-    document.querySelector('body').style.backgroundRepeat = 'no-repeat'
-    document.querySelector('body').style.backgroundSize = 'cover'
+const verificarTamanhoTela = () =>{
+    if(isPlay){
+        mudarBanner()
+    }
 }
+function mudarBanner(){
+    if(window.innerWidth >= 410){
+        document.querySelector('body').style.backgroundImage = "url('img/banner2.jpg')"
+        
+        document.querySelector('body').style.backgroundRepeat = 'no-repeat'
+        document.querySelector('body').style.backgroundSize = 'cover'
+        document.querySelector('body').style.backgroundPosition='left center'
+    }else{
+        document.querySelector('body').style.backgroundImage = "none"
+    }
+}
+
+
+
+window.addEventListener('resize',verificarTamanhoTela)
+
+verificarTamanhoTela()
 
 
 
@@ -181,9 +199,15 @@ containerItems.addEventListener('touchmove', (e) => {
 
     if (diffX < -50) {
         next();
+        setTimeout(()=>{
+            mudarBanner()
+        },120000)
         startX = null;
     } else if (diffX > 50) {
         previous();
+        setTimeout(()=>{
+            mudarBanner()
+        },120000)
         startX = null;
     }
 });
